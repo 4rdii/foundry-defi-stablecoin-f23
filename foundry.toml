@@ -2,5 +2,12 @@
 src = "src"
 out = "out"
 libs = ["lib"]
-
-# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+remappings = [
+    '@openzeppelin=lib/openzeppelin-contracts',
+    '@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/',
+]
+fs_permissions = [{ access = "read", path = "./broadcast" }]
+[invariant]
+runs = 128
+fail_on_revert = false
+depth = 128
